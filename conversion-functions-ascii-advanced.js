@@ -29,18 +29,28 @@ function hexadecimalToBinary(string) {
 }
 
 /* Base 10 to ASCII */
-function decimalToAscii(blob) {
-  // Your code here 
+function decimalToAscii(num) {
+
+// Return a string of UTF-16 from a decimal num
+return String.fromCharCode(num)
+
 }
 
 /* Base 2 to ASCII */
-function binaryToAscii(blob) {
-  // Your code here 
+function binaryToAscii(string) {
+// Return a string of UTF-16 from a binary -> convert binary to dec
+
+let binary = string.slice(2);
+let base10 = parseInt(binary, 2);
+return String.fromCharCode(base10)
+
 }
 
 /* Base 16 to ASCII */
 function hexadecimalToAscii(blob) {
-  // Your code here 
+
+
+  
 }
 
 /* ASCII to base 10 */
