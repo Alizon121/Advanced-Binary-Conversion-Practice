@@ -47,19 +47,29 @@ return String.fromCharCode(base10)
 }
 
 /* Base 16 to ASCII */
-function hexadecimalToAscii(blob) {
+function hexadecimalToAscii(string) {
+// Convert the hexa into a decimal then use String method
+let hexadecimal = string.slice(2)
+let base10 = parseInt(hexadecimal, 16)
 
-
-  
+return String.fromCharCode(base10)
 }
 
 /* ASCII to base 10 */
-function asciiToDecimal(blob) {
-  // Your code here 
+function asciiToDecimal(string) {
+// Convert the ASCII notation to a base-10 integer
+let arr = string.split("")
+
+let newArr = []
+for (let i = 0; i < arr.length; i++) {
+  newArr.push(string.charCodeAt(i));
+}
+return newArr
+
 }
 
 // console.log('Binary to hexadecimal:')
-console.log(binaryToHexadecimal('0b1010')) // '0xa'
+// console.log(binaryToHexadecimal('0b1010')) // '0xa'
 // console.log(binaryToHexadecimal('0b0011')) // '0x3'
 // console.log('')
 
