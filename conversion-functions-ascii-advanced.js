@@ -8,13 +8,24 @@ Consult documentation on how to utilize the following methods:
 */
 
 /* Base 2 to base 16 */
-function binaryToHexadecimal(blob) {
-
+function binaryToHexadecimal(string) {
+// //  We can start by converting base 2 to base 10
+let base = '0x'
+let binaryString = string.slice(2)
+let base10 = parseInt(binaryString, 2)
+let hexa = base10.toString(16)
+return base+=hexa
 }
 
 /* Base 16 to base 2 */
-function hexadecimalToBinary(blob) {
-  // Your code here 
+function hexadecimalToBinary(string) {
+  let base = '0b'
+  let newStr = string.slice(2)
+  let base10Num = parseInt(newStr, 16)
+
+  // use toString() method to convert base-10 to base-2 or base-16
+   let base10Str = base10Num.toString(2)
+  return base+=base10Str
 }
 
 /* Base 10 to ASCII */
@@ -38,7 +49,7 @@ function asciiToDecimal(blob) {
 }
 
 // console.log('Binary to hexadecimal:')
-// console.log(binaryToHexadecimal('0b1010')) // '0xa'
+console.log(binaryToHexadecimal('0b1010')) // '0xa'
 // console.log(binaryToHexadecimal('0b0011')) // '0x3'
 // console.log('')
 
